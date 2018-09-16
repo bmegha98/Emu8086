@@ -1,0 +1,31 @@
+; OBJECTIVE : SWAPPING CONTENTS OF TWO VARIABLES USING XCHG INSTRUCTION
+
+DATA SEGMENT
+    
+    ; VARIABLES INITIALIZATION
+    
+    var1 DW 1234H
+    var2 DW 5674H
+   
+DATA ENDS
+
+CODE SEGMENT
+    
+    ASSUME CS:CODE DS:DATA
+    
+    START:
+      MOV AX,DATA
+      MOV DS,AX
+      
+      MOV AX,var1;
+      XCHG AX,var2;
+      MOV var1,AX;  
+      
+      
+      CODE ENDS
+
+END START
+
+
+
+
