@@ -28,7 +28,7 @@ CODE SEGMENT
      ADD AX,Y
      ADD AX,2411H
      SUB AX,Z
-     MOV result,AX        ; Final Result is in result variable
+     MOV result,AX         ; Final Result is in result variable
      
 CODE ENDS
 
