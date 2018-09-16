@@ -28,7 +28,7 @@ CODE SEGMENT
      ADD AL,Y
      ADD AL,24H
      SUB AL,Z
-     MOV result,AL        ; Final Result is in result variable
+     MOV result,AL         ; Final Result is in result variable
      
 CODE ENDS
 
