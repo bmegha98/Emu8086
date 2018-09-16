@@ -1,0 +1,42 @@
+; OBJECTIVE : WORD(BYTE by BYTE ARITHMETIC
+
+DATA SEGMENT  
+    
+; VARIABLES INITIALIZATION
+
+    X DD 12345670H
+    Y DD 67864333H
+    Z DD 12302345H
+    result DD ?
+    
+DATA ENDS 
+
+CODE SEGMENT  
+    
+    ASSUME CS:CODE  DS:DATA 
+    
+    START:  
+  
+ ; MOVING ADDRESS OF DATA TO DS(DATA SEGMENT)
+     
+     MOV AX,DATA
+     MOV DS,AX
+  
+  ; EVALUATING EXPRESSION X+Y+24-Z
+    
+     MOV AX,WORD PTR X
+     ADD AX,WORD PTR Y 
+     MOV BX,WORD PTR X+2
+     ADC BX,WORD PTR Y+2
+     ADD AX,2001H  
+     ADC BX,00
+     SUB AX,WORD PTR Z
+     SBB BX,WORD PTR Z+2
+     MOV result,AX 
+     MOV result+2,BX         ; Final Result is in result variable
+     
+CODE ENDS
+
+END START
+    
+
